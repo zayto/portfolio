@@ -20,6 +20,7 @@ next-env.d.ts
 .DS_Store
 *.pem
 /.vscode/*
+/tsconfig.tsbuildinfo
 
 # debug
 npm-debug.log*

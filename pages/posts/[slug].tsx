@@ -46,7 +46,7 @@ export default function Post({ post, morePosts, preview }) {
   );
 }
 
-export async function getStaticProps({ params, preview = false }) {
+export const getStaticProps = async ({ params, preview = false }) => {
   const data = await getPostAndMorePosts(params.slug, preview);
 
   return {
@@ -56,12 +56,12 @@ export async function getStaticProps({ params, preview = false }) {
       morePosts: data?.morePosts ?? null,
     },
   };
-}
+};
 
-export async function getStaticPaths() {
+export const getStaticPaths = async () => {
   const allPosts = await getAllPostsWithSlug();
   return {
     paths: allPosts?.map(({ slug }) => `/posts/${slug}`) ?? [],
     fallback: true,
   };
-}
+};
