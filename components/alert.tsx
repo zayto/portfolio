@@ -3,11 +3,14 @@ import cn from "classnames";
 import Link from "next/link";
 import { EXAMPLE_PATH } from "../lib/constants";
 
-export default function Alert({ preview }) {
+type AlertProps = {
+  preview: boolean;
+};
+
+const Alert: React.FC<AlertProps> = ({ preview }) => {
   return (
     <div
-      cl
-      assName={cn("border-b", {
+      className={cn("border-b", {
         "bg-accent-7 border-accent-7 text-white": preview,
         "bg-accent-1 border-accent-2": !preview,
       })}
@@ -38,4 +41,6 @@ export default function Alert({ preview }) {
       </Container>
     </div>
   );
-}
+};
+
+export default Alert;

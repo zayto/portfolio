@@ -2,7 +2,9 @@ import ContentfulImage from "./contentful-image";
 import Link from "next/link";
 import cn from "classnames";
 
-export default function CoverImage({ title, url, slug }) {
+type CoverImageProps = { title: string; url: string; slug?: string };
+
+const CoverImage: React.FC<CoverImageProps> = ({ title, url, slug }) => {
   const image = (
     <ContentfulImage
       width={2000}
@@ -26,4 +28,6 @@ export default function CoverImage({ title, url, slug }) {
       )}
     </div>
   );
-}
+};
+
+export default CoverImage;

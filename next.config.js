@@ -4,8 +4,6 @@ module.exports = {
   },
   baseUrl: "./",
   paths: {
-    "@utils/*": ["utils/*"],
     "@components/*": ["components/*"],
-    "@types/*": ["@types/*"],
   },
 };

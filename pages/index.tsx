@@ -6,8 +6,14 @@ import Layout from "@components/layout";
 import { getAllPostsForHome } from "../lib/api";
 import Head from "next/head";
 import { CMS_NAME } from "../lib/constants";
+import { IPost } from "../types/content-types/post";
 
-const Index = ({ preview, allPosts }) => {
+type IndexProps = {
+  preview: boolean;
+  allPosts: IPost[];
+};
+
+const Index: React.FC<IndexProps> = ({ preview, allPosts }) => {
   const heroPost = allPosts[0];
   const morePosts = allPosts.slice(1);
   return (

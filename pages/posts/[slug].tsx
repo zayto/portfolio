@@ -11,8 +11,15 @@ import Layout from "@components/layout";
 import { getAllPostsWithSlug, getPostAndMorePosts } from "../../lib/api";
 import PostTitle from "@components/post-title";
 import { CMS_NAME } from "../../lib/constants";
+import { IPost } from "types/content-types/post";
 
-export default function Post({ post, morePosts, preview }) {
+type PostProps = {
+  post: IPost;
+  morePosts: IPost[];
+  preview: boolean;
+};
+
+const Post: React.FC<PostProps> = ({ post, morePosts, preview }) => {
   const router = useRouter();
 
   if (!router.isFallback && !post) {
@@ -44,7 +51,9 @@ export default function Post({ post, morePosts, preview }) {
       </Container>
     </Layout>
   );
-}
+};
+
+export default Post;
 
 export const getStaticProps = async ({ params, preview = false }) => {
   const data = await getPostAndMorePosts(params.slug, preview);
