@@ -1,5 +1,4 @@
-import Container from "./container";
-import { EXAMPLE_PATH } from "../lib/constants";
+import Container from '@c/container';
 
 const Footer = () => (
   <footer className="bg-accent-1 border-t border-accent-2">
@@ -15,10 +14,7 @@ const Footer = () => (
           >
             Read Documentation
           </a>
-          <a
-            href={`https://github.com/vercel/next.js/tree/canary/examples/${EXAMPLE_PATH}`}
-            className="mx-3 font-bold hover:underline"
-          >
+          <a href={`https://github.com/vercel/next.js/tree/canary/examples`} className="mx-3 font-bold hover:underline">
             View on GitHub
           </a>
         </div>

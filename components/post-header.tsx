@@ -1,8 +1,8 @@
-import Avatar from "@components/avatar";
-import DateComponent from "@components/date";
-import CoverImage from "@components/cover-image";
-import PostTitle from "@components/post-title";
-import { IAuthor } from "../types/content-types/author";
+import Avatar from '@c/avatar';
+import DateComponent from '@c/date';
+import CoverImage from '@c/cover-image';
+import PostTitle from '@c/post-title';
+import { IAuthor } from '@t/content-types/author';
 
 type PostHeaderProps = {
   title: string;

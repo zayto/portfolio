@@ -1,20 +1,25 @@
-import { CMS_NAME, CMS_URL } from "../lib/constants";
+import { IRichText } from '@t/document';
+import ContentfulImage from './contentful-image';
+import RichText from './rich-text';
 
-const Intro = () => (
-  <section className="flex-col md:flex-row flex items-center md:justify-between mt-16 mb-16 md:mb-12">
-    <h1 className="text-6xl md:text-8xl font-bold tracking-tighter leading-tight md:pr-8">Blog.</h1>
-    <h4 className="text-center md:text-left text-lg mt-5 md:pl-8">
-      A statically generated blog example using{" "}
-      <a href="https://nextjs.org/" className="underline hover:text-success duration-200 transition-colors">
-        Next.js
-      </a>{" "}
-      and{" "}
-      <a href={CMS_URL} className="underline hover:text-success duration-200 transition-colors">
-        {CMS_NAME}
-      </a>
-      .
-    </h4>
-  </section>
+type IntroProps = {
+  introTitle: string;
+  introDescription: IRichText;
+  introPicture: any;
+};
+
+const Intro: React.FC<IntroProps> = ({ introTitle, introDescription, introPicture }) => (
+  <>
+    <div className="flex flex-col md:flex-row my-16 justify-items-center items-center container mx-auto max-w-screen-xl">
+      <section className="md:flex-1 max-w-3xl mx-5">
+        <h1 className="text-4xl font-bold">{introTitle}</h1>
+        <RichText json={introDescription?.json} />
+      </section>
+      <div className="px-5 py-3">
+        <ContentfulImage className="rounded-full" src={introPicture.url} alt="" width={255} height={255} />
+      </div>
+    </div>
+  </>
 );
 
 export default Intro;

@@ -1,8 +1,8 @@
-import Link from "next/link";
-import Avatar from "@components/avatar";
-import DateComponent from "@components/date";
-import CoverImage from "./cover-image";
-import { IAuthor } from "../types/content-types/author";
+import Link from 'next/link';
+import Avatar from '@c/avatar';
+import DateComponent from '@c/date';
+import CoverImage from './cover-image';
+import { IAuthor } from '@t/content-types/author';
 
 type PostPreviewProps = {
   title: string;

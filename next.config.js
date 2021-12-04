@@ -1,9 +1,11 @@
 module.exports = {
   images: {
-    loader: "custom",
+    loader: 'custom',
   },
-  baseUrl: "./",
+  baseUrl: '.',
   paths: {
-    "@components/*": ["components/*"],
+    '@c/*': ['components/*'],
+    '@q/*': ['lib/queries/*'],
+    '@t/*': ['./types/*'],
   },
 };

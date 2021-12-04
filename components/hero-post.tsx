@@ -1,7 +1,7 @@
-import Link from "next/link";
-import Avatar from "@components/avatar";
-import DateComponent from "@components/date";
-import CoverImage from "@components/cover-image";
+import Link from 'next/link';
+import Avatar from '@c/avatar';
+import DateComponent from '@c/date';
+import CoverImage from '@c/cover-image';
 
 type HeroPostProps = {
   title: string;

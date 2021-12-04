@@ -1,13 +1,13 @@
-import Alert from "@components/alert";
-import Footer from "@components/footer";
-import Meta from "@components/meta";
+import Footer from '@c/footer';
+import Meta from '@c/meta';
+import Header from './header';
 
 const Layout = ({ preview, children }) => (
   <>
     <Meta />
+    <Header />
     <div className="min-h-screen">
-      <Alert preview={preview} />
-      <main>{children}</main>
+      <main className="container mx-auto max-w-screen-xl">{children}</main>
     </div>
     <Footer />
   </>

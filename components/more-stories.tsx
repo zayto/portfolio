@@ -1,5 +1,5 @@
-import PostPreview from "@components/post-preview";
-import { IPost } from "../types/content-types/post";
+import PostPreview from '@c/post-preview';
+import { IPost } from '@t/content-types/post';
 
 type MoreStoriesProps = {
   posts: IPost[];

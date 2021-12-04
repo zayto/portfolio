@@ -1,5 +1,5 @@
-import { IDocument } from "../document";
-import { IAuthor } from "./author";
+import { IDocument } from '../document';
+import { IAuthor } from './author';
 
 export interface IPost {
   slug: string;

@@ -1,29 +1,30 @@
-import Container from "@components/container";
-import MoreStories from "@components/more-stories";
-import HeroPost from "@components/hero-post";
-import Intro from "@components/intro";
-import Layout from "@components/layout";
-import { getAllPostsForHome } from "../lib/api";
-import Head from "next/head";
-import { CMS_NAME } from "../lib/constants";
-import { IPost } from "../types/content-types/post";
+import Head from 'next/head';
+import Container from '@c/container';
+import MoreStories from '@c/more-stories';
+import HeroPost from '@c/hero-post';
+import Layout from '@c/layout';
+import Intro from '@c/intro';
+import { IHomeIntro } from '@t/home';
+import { IPost } from '@t/content-types/post';
+import { getAllPostsForHome, getHomeIntro } from '../lib/api';
 
 type IndexProps = {
   preview: boolean;
   allPosts: IPost[];
+  intro: IHomeIntro;
 };
 
-const Index: React.FC<IndexProps> = ({ preview, allPosts }) => {
+const Index: React.FC<IndexProps> = ({ preview, allPosts, intro }) => {
   const heroPost = allPosts[0];
   const morePosts = allPosts.slice(1);
   return (
     <>
       <Layout preview={preview}>
         <Head>
-          <title>Next.js Blog Example with {CMS_NAME}</title>
+          <title>Zayto&#39;s Blog</title>
         </Head>
+        <Intro {...intro} />
         <Container>
-          <Intro />
           {heroPost && (
             <HeroPost
               title={heroPost.title}
@@ -45,7 +46,8 @@ export default Index;
 
 export const getStaticProps = async ({ preview = false }) => {
   const allPosts = (await getAllPostsForHome(preview)) ?? [];
+  const intro = await getHomeIntro(preview);
   return {
-    props: { preview, allPosts },
+    props: { preview, allPosts, intro },
   };
 };
