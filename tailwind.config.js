@@ -1,3 +1,5 @@
+const defaultTheme = require('tailwindcss/defaultTheme');
+const plugin = require('tailwindcss/plugin');
 const colors = require('tailwindcss/colors');
 
 module.exports = {
@@ -21,6 +23,9 @@ module.exports = {
       },
       lineHeight: {
         tight: 1.2,
+      },
+      fontFamily: {
+        sans: ['Inter', ...defaultTheme.fontFamily.sans],
       },
       fontSize: {
         '5xl': '2.5rem',
