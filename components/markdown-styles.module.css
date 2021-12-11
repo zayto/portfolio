@@ -3,7 +3,7 @@
 }
 
 .markdown a {
-  @apply text-blue-400 hover:text-blue-600 hover:font-bold;
+  @apply text-blue-600 hover:text-blue-800 font-bold;
 }
 
 .markdown p,
