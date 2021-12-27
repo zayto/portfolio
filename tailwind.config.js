@@ -13,7 +13,7 @@ module.exports = {
         'accent-2': '#EAEAEA',
         'accent-7': '#333',
         primary: '#374151',
-        secondary: '#17ffde',
+        secondary: '#ffb854',
         success: '#0070f3',
         cyan: '#79FFE1',
       },
