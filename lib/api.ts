@@ -80,7 +80,7 @@ export async function getAllPostsWithSlug(): Promise<IPost[]> {
   return extractPostEntries(entries);
 }
 
-export async function getAllPostsForHome(preview: boolean) {
+export async function getAllPostsForBlog(preview: boolean) {
   const entries = await fetchGraphQL(
     `query {
       postCollection(order: date_DESC, preview: ${preview ? 'true' : 'false'}) {
