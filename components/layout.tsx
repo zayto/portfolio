@@ -12,7 +12,7 @@ const Layout = ({ preview, children }) => {
     <div className={cn({ dark: theme === 'dark' })}>
       <Meta />
       <Header />
-      <div className="min-h-screen bg-white dark:bg-primary dark:text-white">
+      <div className="min-h-screen bg-white dark:bg-primary dark:text-white pb-4">
         <main className="container mx-auto max-w-screen-xl">{children}</main>
       </div>
       <Footer />
