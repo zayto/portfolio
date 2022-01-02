@@ -3,8 +3,3 @@
 @tailwind components;
 /* purgecss end ignore */
 @tailwind utilities;
-
-/* Fix markdown rich content links for dark mode */
-a {
-  @apply dark:text-secondary !important;
-}
