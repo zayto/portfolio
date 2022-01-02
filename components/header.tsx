@@ -9,7 +9,11 @@ import SunIcon from 'public/assets/sun.svg';
 
 const Header = () => {
   const { theme, setTheme } = useContext(ThemeContext);
-  const toggleTheme = () => setTheme(theme === 'light' ? 'dark' : 'light');
+  const toggleTheme = () => {
+    const newTheme = theme === 'light' ? 'dark' : 'light';
+    setTheme(newTheme);
+    window.localStorage.setItem('theme', newTheme);
+  };
   const icon = theme === 'light' ? MoonIcon : SunIcon;
 
   return (
